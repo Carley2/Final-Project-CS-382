@@ -56,11 +56,6 @@ public class PlayerMovement : MonoBehaviour
         CheckGroundCollision(collision);
     }
 
-    void OnCollisionStay2D(Collision2D collision)
-    {
-        CheckGroundCollision(collision);
-    }
-
     void CheckGroundCollision(Collision2D collision)
     {
         for (int i = 0; i < collision.contactCount; i++)
