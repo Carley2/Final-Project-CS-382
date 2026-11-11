@@ -3,6 +3,10 @@ using UnityEngine;
 public class PlayerDeath : MonoBehaviour
 {
     public AudioClip deathSound;
+    public BackgroundMusicManager backgroundMusic;
+
+    public float deathSoundVolume = 20f;
+
     private bool isDead = false;
 
     public void Die()
@@ -19,8 +23,14 @@ public class PlayerDeath : MonoBehaviour
             AudioSource.PlayClipAtPoint(
                 deathSound,
                 transform.position,
-                1f
+                deathSoundVolume
             );
+        }
+
+        // Lower the background music
+        if (backgroundMusic != null)
+        {
+            backgroundMusic.LowerMusicVolume();
         }
 
         // Display the Game Over screen

@@ -132,6 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8663310}
   - component: {fileID: 8663309}
+  - component: {fileID: 8663311}
   m_Layer: 0
   m_Name: BackgroundMusic
   m_TagString: Untagged
@@ -151,7 +152,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: de5953072116f3343bc34db30d626de2, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.17
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -250,6 +251,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8663311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8663308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2e3d54af61d0c146bc10380e40ebfc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicVolumeAfterDeath: 0
+  fadeSpeed: 1
 --- !u!1 &149371484
 GameObject:
   m_ObjectHideFlags: 0
@@ -2209,6 +2224,18 @@ PrefabInstance:
     - target: {fileID: 8097888149519665068, guid: 1a16eb7c6db36c444a7afe5698e39315, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8097888149519665070, guid: 1a16eb7c6db36c444a7afe5698e39315, type: 3}
+      propertyPath: deathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 94cb4ce1004322b4c8f08e4a4e38bd1e, type: 3}
+    - target: {fileID: 8097888149519665070, guid: 1a16eb7c6db36c444a7afe5698e39315, type: 3}
+      propertyPath: backgroundMusic
+      value: 
+      objectReference: {fileID: 8663311}
+    - target: {fileID: 8097888149519665070, guid: 1a16eb7c6db36c444a7afe5698e39315, type: 3}
+      propertyPath: deathSoundVolume
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8097888149519665072, guid: 1a16eb7c6db36c444a7afe5698e39315, type: 3}
       propertyPath: m_Name
