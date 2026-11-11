@@ -4,20 +4,23 @@ using TMPro;
 public class FinishLine : MonoBehaviour
 {
     public TMP_Text levelCompleteText;
-
     public TimerManager timerManager;
+    public GameObject nextLevelButton;
 
     private bool levelFinished = false;
 
     void Start()
     {
         levelCompleteText.gameObject.SetActive(false);
+        nextLevelButton.SetActive(false);
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (levelFinished) return;
 
+        nextLevelButton.SetActive(true);
+        
         if (collision.CompareTag("Player"))
         {
             levelFinished = true;
