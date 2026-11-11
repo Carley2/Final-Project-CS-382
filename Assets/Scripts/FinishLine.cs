@@ -5,6 +5,8 @@ public class FinishLine : MonoBehaviour
 {
     public TMP_Text levelCompleteText;
 
+    public TimerManager timerManager;
+
     private bool levelFinished = false;
 
     void Start()
@@ -19,6 +21,11 @@ public class FinishLine : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             levelFinished = true;
+
+            if (timerManager != null)
+            {
+                timerManager.StopTimer();
+            }
 
             // Show the completion message
             levelCompleteText.gameObject.SetActive(true);

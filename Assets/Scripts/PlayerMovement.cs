@@ -70,12 +70,21 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
+    
     void CheckForFall()
     {
         if (transform.position.y < deathY)
         {
-            Debug.Log("Player fell off the platform!");
-            Destroy(gameObject);
+            PlayerDeath playerDeath = GetComponent<PlayerDeath>();
+
+            if (playerDeath != null)
+            {
+                playerDeath.Die();
+            }
+            else
+            {
+                Debug.LogError("PlayerDeath component is missing!");
+            }
         }
     }
 }
